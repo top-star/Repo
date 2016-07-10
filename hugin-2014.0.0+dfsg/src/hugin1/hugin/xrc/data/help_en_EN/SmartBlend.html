@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<title>SmartBlend - PanoTools.org Wiki</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.19.0" />
+
+
+
+
+
+
+<style media="screen" type="text/css" title="Screen style sheet"> @import url(manual.css); </style>
+
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: pt_wikidb:resourceloader:filter:minify-css:7:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+
+
+
+
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-SmartBlend skin-vector action-view">
+		
+		
+		<!-- content -->
+		<div id="content" class="mw-body">
+			<a id="top"></a>
+			
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">
+				<span dir="auto">SmartBlend</span>
+			</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+								<!-- tagline -->
+				<div id="siteSub">From PanoTools.org Wiki</div>
+				<!-- /tagline -->
+								<!-- subtitle -->
+				
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				
+				<!-- /jumpto -->
+								<!-- bodycontent -->
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>Smartblend</b> is
+an application for seamless image blending by Michael Norel. He can be reached at minorlogic{at}yahoo{dot}com
+</p><p>The main goal of smartblend is panoramic image blending, though it can be used for other applications, such as creation of seamless textures, montage of photos or collage. Smartblend allows stitching of many problematic shots (parallaxed, with moving objects or with differing exposure).
+</p><p>For example see the parallax picture below (from <a rel="nofollow" class="external free" href="http://www.htu.at/~sascha/ptguide/01.htm">http://www.htu.at/~sascha/ptguide/01.htm</a> described as "impossible to stitch" )
+</p>
+<div class="floatleft"><img alt="SB Parallax.jpg" src="SB_Parallax.jpg" width="656" height="240" /><a class="external" href="http://wiki.panotools.org/File:SB_Parallax.jpg">[*]</a></div><br style="clear:both;" />
+<p>Just put one picture into another and note the great difference.
+</p>
+<div class="floatleft"><img alt="SB Parallax overlapped.jpg" src="SB_Parallax_overlapped.jpg" width="406" height="241" /><a class="external" href="http://wiki.panotools.org/File:SB_Parallax_overlapped.jpg">[*]</a></div><br style="clear:both;" />
+<p>Picture below is blended by smartblend.
+</p>
+<div class="floatleft"><img alt="SB Blended.jpg" src="SB_Blended.jpg" width="406" height="240" /><a class="external" href="http://wiki.panotools.org/File:SB_Blended.jpg">[*]</a></div><br style="clear:both;" />
+<p>Another smartblend example: <a rel="nofollow" class="external free" href="http://www.photodan.com.au/misc/flamchen.htm">http://www.photodan.com.au/misc/flamchen.htm</a>
+</p><p>If you don't know what is a "command line application"  it can not be useful for you. But you still can use a frontend for smartblend:
+</p>
+<ul><li> PanoWizard<a class="external" href="http://wiki.panotools.org/PanoWizard">[*]</a>
+</li><li> EnblendGUI<a class="external" href="http://wiki.panotools.org/EnblendGUI">[*]</a>
+</li><li> PTGui<a class="external" href="http://wiki.panotools.org/PTGui">[*]</a>
+</li><li> PTAssembler<a class="external" href="http://wiki.panotools.org/PTAssembler">[*]</a>
+</li><li> <a href="Hugin.html" title="Hugin">hugin</a> (only together with the smartblend wrapper from <a rel="nofollow" class="external text" href="http://hugin.svn.sourceforge.net/viewvc/hugin/hugin/trunk/platforms/windows/smartblend-wrapper/">sourceforge</a>)
+</li></ul>
+<p>Download SmartBlend, current version Smartblend_1_2_5.zip<a class="external" href="http://wiki.panotools.org/images/3/37/Smartblend_1_2_5.zip">[*]</a>
+</p>
+<h2> <span class="mw-headline" id="How_it_works"> How it works </span></h2>
+<p>It finds the visual error on overlap region and searches for a seam line with minimal visual error. Than it blends pictures using an algorithm similar to a multiresolution spline.
+</p><p>To study algorithms and options use “–SeamVerbose”  and  “-PyramidVerbose” commands.
+</p><p>There is a <a rel="nofollow" class="external text" href="http://qtvr.by.ru/NewQTWR/sm/smartblend.htm">good tutorial</a>, but it's available only in Russian. Anyone to translate it?
+</p><p>Translation by BableFish - <a rel="nofollow" class="external text" href="http://babelfish.yahoo.com/translate_url?doit=done&amp;tt=url&amp;intl=1&amp;fr=bf-home&amp;trurl=http%3A%2F%2Fqtvr.by.ru%2FNewQTWR%2Fsm%2Fsmartblend.htm&amp;lp=ru_en&amp;btnTrUrl=Translate">Tutorial in English</a>
+</p><p>Welcome to anyone who wants to improve this smartblend, write a tutorial and other.
+</p><p><small>(Text taken from original smartblend home page)</small>
+</p>
+<h2> <span class="mw-headline" id="smartblend_on_Mac"> smartblend on Mac </span></h2>
+<p>There used to be a nice tutorial on tweakbits.com which is gone. If anyone still has the know how, please write a wiki page: smartblend on Mac<a class="external" href="http://wiki.panotools.org/Smartblend_on_Mac">[*]</a> For the time being you find the content retrieved from google cache on the corresponding discussion page.
+</p>
+
+
+
+</div>				<!-- /bodycontent -->
+								<!-- printfooter -->
+				<div class="printfooter">
+				Retrieved from "http://wiki.panotools.org/index.php?title=SmartBlend&amp;oldid=14181<a class="external" href="http://wiki.panotools.org/index.php?title=SmartBlend&amp;oldid=14181">[*]</a>"				</div>
+				<!-- /printfooter -->
+												<!-- catlinks -->
+				</div></div></body></html>

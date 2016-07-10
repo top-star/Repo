@@ -1,0 +1,15 @@
+TODO for hugin:
+---------------
+
+  * Look for items under src/foreign and see whether such packages exist
+    in Debian already.
+  * Double check cmake's support for CFLAGS/LDFLAGS.
+  * Track down embedded code copies and get rid of them (at least don't
+    use them). Notify the security team about them. At the moment,
+    there's vigra_impex at least (see libvigraimpex-dev).
+  * Find nice short descriptions for each package.
+  * Also mention tca_correct; make sure all binaries are listed there.
+  * Adapt README.Debian, probably specifying that this version and later
+    are OK-ish, or even drop it.
+
+ -- Cyril Brulebois <kibi@debian.org>  Tue, 11 Nov 2008 16:21:42 +0100

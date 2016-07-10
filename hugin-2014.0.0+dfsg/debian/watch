@@ -1,0 +1,4 @@
+version=3
+
+opts="uversionmangle=s/[_-]/\~/g,dversionmangle=s/\+dfsg//" \
+       http://sf.net/hugin/hugin-(.+)\.tar\.(?:bz2|gz)

@@ -1,0 +1,15 @@
+Author: Andreas Metzler
+Description: Do not link unnecessarily against Xmu and Xi.
+
+diff -NurbBp a/CMakeModules/FindGLUT.cmake b/CMakeModules/FindGLUT.cmake
+--- a/CMakeModules/FindGLUT.cmake	2010-07-16 22:37:17.000000000 +0200
++++ b/CMakeModules/FindGLUT.cmake	2010-07-17 18:39:42.000000000 +0200
+@@ -70,8 +70,6 @@ IF(GLUT_INCLUDE_DIR)
+     # If not, we need some way to figure out what platform we are on.
+     SET( GLUT_LIBRARIES
+       ${GLUT_glut_LIBRARY}
+-      ${GLUT_Xmu_LIBRARY}
+-      ${GLUT_Xi_LIBRARY} 
+       ${GLUT_cocoa_LIBRARY}
+       )
+     SET( GLUT_FOUND "YES" )

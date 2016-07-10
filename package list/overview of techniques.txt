@@ -1,0 +1,12 @@
+Overview of the technologies used for the "Fast Panorama preview - Move/Drag" tab
+
+1. Enblend
+Enblend is a multi band blending technique for panoramic images.
+Enblend overlays multiple TIFF images so as to make the stream invisible.
+This technique tries to make the seams between the inut images invisible.
+The basic idea is that image features should be blended across a transition zone proportional in size to the spatial frequency of the features.
+
+2. libpano
+libpano is Linear Panorama(Mosaic) library.
+libpano library is based on GDLib.
+That is libpano to stitch photos together, making some sort of panorama.

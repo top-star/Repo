@@ -1,0 +1,84 @@
+# hugin project file
+#hugin_ptoversion 2
+p f2 w8192 h4096 v360  k1 E12.0337 R0 n"TIFF_m c:NONE"
+m g1 i0 f0 m2 p0.00784314
+
+# image lines
+#-hugin  cropFactor=6.4
+i w2560 h1920 f3 v118.278896826522 Ra0 Rb0 Rc0 Rd0 Re0 Eev14.0560966486384 Er1 Eb1 r89.7381415516578 p-5.78721970762101 y-42.029777398606 TrX0 TrY0 TrZ0 j0 a-0.0126033814767021 b0 c-0.0318596856301991 d30.2664927373924 e45.6998941916408 g0 t0 Va1 Vb0 Vc0 Vd0 Vx0 Vy0  Vm5 n"000000012-2.jpg"
+#-hugin  cropFactor=6.4
+i w2560 h1920 f3 v117.577062320067 Ra0 Rb0 Rc0 Rd0 Re0 Eev14.0710886959341 Er1 Eb1 r-85.8498019053345 p-8.86154838771765 y29.0281761986776 TrX0 TrY0 TrZ0 j0 a-0.0175421913058564 b0 c-0.0116098957367022 d-37.8040581119838 e-34.7578658493147 g0 t0 Va1 Vb0 Vc0 Vd0 Vx0 Vy0  Vm5 n"000000012-3.jpg"
+#-hugin  cropFactor=6.40000009536743
+i w2560 h1920 f3 v117.357382914625 Ra0 Rb0 Rc0 Rd0 Re0 Eev14.1928036910886 Er1 Eb1 r93.0872738176725 p-14.405941545465 y100.584758082983 TrX0 TrY0 TrZ0 j0 a-0.0153141340326745 b0 c-0.0252183083197792 d46.5516454209658 e-48.6298158740005 g0 t0 Va1 Vb0 Vc0 Vd0 Vx0 Vy0  Vm5 n"000000012-4.jpg"
+#-hugin  cropFactor=6.40000009536743
+i w2560 h1920 f3 v118.853914190862 Ra0 Rb0 Rc0 Rd0 Re0 Eev13.9862461444685 Er1 Eb1 r-92.5735404695604 p-14.2558285139214 y174.106735984616 TrX0 TrY0 TrZ0 j0 a-0.0161673818355411 b0 c-0.0201911813396807 d-19.9709732211277 e37.7020952032888 g0 t0 Va1 Vb0 Vc0 Vd0 Vx0 Vy0  Vm5 n"000000012-5.jpg"
+#-hugin  cropFactor=6.40000009536743
+i w2560 h1920 f3 v117.81822695563 Ra0 Rb0 Rc0 Rd0 Re0 Eev13.9287242681228 Er1 Eb1 r-94.5108528287827 p-9.44719436589317 y-114.087071208016 TrX0 TrY0 TrZ0 j0 a-0.0166818228979781 b0 c-0.0143093921319859 d-47.886051738074 e42.4990169315177 g0 t0 Va1 Vb0 Vc0 Vd0 Vx0 Vy0  Vm5 n"000000012-6.jpg"
+#-hugin  cropFactor=6.4
+i w2560 h1920 f3 v116.789257411392 Ra0 Rb0 Rc0 Rd0 Re0 Eev13.9672098340248 Er1 Eb1 r-67.93101702453 p85.7120682823028 y141.622193697955 TrX0 TrY0 TrZ0 j0 a-0.0138183385200566 b0 c-0.0445046160137189 d-12.40499189343 e51.2882861187016 g0 t0 Va1 Vb0 Vc0 Vd0 Vx0 Vy0  Vm5 n"000000012-1.jpg"
+
+
+# specify variables that should be optimized
+v Eev0
+v Eev1
+v Eev2
+v Eev3
+v Eev4
+v Eev5
+v
+
+
+# control points
+
+# masks
+k i0 t0 p"-17 1740 167 1945 -23 1945"
+k i0 t0 p"-23 319 230 -32 -35 -47"
+k i0 t0 p"2421 1933 2602 1743 2599 1939"
+k i0 t0 p"2324 -44 2599 301 2596 -41"
+k i1 t0 p"2582 185 2405 -23 2582 -29"
+k i1 t0 p"2594 1651 2341 1948 2588 1951"
+k i1 t0 p"129 -23 -46 151 -43 -29"
+k i1 t0 p"253 1963 -28 1691 -31 1957"
+k i2 t0 p"-32 1595 288 1948 -32 1954"
+k i2 t0 p"-29 222 164 -47 -44 -47"
+k i2 t0 p"2339 1927 2590 1640 2599 1951"
+k i2 t0 p"2409 -41 2578 141 2581 -50 2581 -50"
+k i3 t0 p"2597 282 2323 -29 2585 -35"
+k i3 t0 p"2588 1718 2432 1948 2582 1951"
+k i3 t0 p"272 -17 -77 330 -49 -23"
+k i3 t0 p"193 1975 -37 1681 -22 1951"
+k i4 t0 p"2591 321 2308 -32 2588 -29"
+k i4 t0 p"2588 1687 2411 1948 2594 1951"
+k i4 t0 p"238 -29 -25 315 -28 -41"
+k i4 t0 p"138 1954 -34 1763 -37 1997"
+k i5 t0 p"-29 1516 257 1933 -26 1924"
+k i5 t0 p"-20 295 270 -23 -26 -26"
+k i5 t0 p"2369 1930 2590 1743 2590 1936"
+k i5 t0 p"2269 -41 2602 259 2618 -44"
+
+#hugin_optimizeReferenceImage 1
+#hugin_blender enblend
+#hugin_remapper nona
+#hugin_enblendOptions 
+#hugin_enfuseOptions 
+#hugin_hdrmergeOptions -m avg -c
+#hugin_outputLDRBlended true
+#hugin_outputLDRLayers false
+#hugin_outputLDRExposureRemapped false
+#hugin_outputLDRExposureLayers false
+#hugin_outputLDRExposureBlended false
+#hugin_outputLDRStacks false
+#hugin_outputLDRExposureLayersFused false
+#hugin_outputHDRBlended false
+#hugin_outputHDRLayers false
+#hugin_outputHDRStacks false
+#hugin_outputLayersCompression LZW
+#hugin_outputImageType jpg
+#hugin_outputImageTypeCompression LZW
+#hugin_outputJPEGQuality 85
+#hugin_outputImageTypeHDR exr
+#hugin_outputImageTypeHDRCompression LZW
+#hugin_outputStacksMinOverlap 0.7
+#hugin_outputLayersExposureDiff 0.5
+#hugin_optimizerMasterSwitch 0
+#hugin_optimizerPhotoMasterSwitch 0

@@ -1,0 +1,3 @@
+Tests: simple.pano.test
+Depends: hugin
+Restrictions: allow-stderr

@@ -1,0 +1,862 @@
+hugin (2014.0.0+dfsg-3) unstable; urgency=medium
+
+  * 55_6510_dc996061de70_Fixes_one_format_string.diff: Another assertion fix
+    from upstream HG. See #766093.
+    https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=766093#33
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 22 Nov 2014 14:23:45 +0100
+
+hugin (2014.0.0+dfsg-2) unstable; urgency=medium
+
+  * 54_59938e35626e_Fixes_formating_of_2_strings.diff: Fix wxArgNormalizer
+    assert error. Closes: #764759
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 26 Oct 2014 08:11:09 +0100
+
+hugin (2014.0.0+dfsg-1) unstable; urgency=medium
+
+  * New upstream stable release.
+  * Drop patches previously pulled from rc4.
+    +50_10aa8ea89d9e_crash_when_loading_multiple_images.diff
+    +51_b2c6b668f052_Fixed_typo_in_last_commit.diff
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 11 Oct 2014 19:14:44 +0200
+
+hugin (2014.0.0~rc3+dfsg-5) unstable; urgency=high
+
+  * Rename simple_pano_test to simple.pano.test. (lintian)
+  * Pull 52_044b08eb6adf_Several_fixes_to_treelistctrl.diff
+    53_f88dc95914ae_Use_correct_class_wxStaticBitmap_for_bitmap_controls.diff
+    from upstream HG (Thanks, Thomas Modes!) to fix wx assert errors.
+    Closes: #761224
+
+ -- Andreas Metzler <ametzler@debian.org>  Tue, 16 Sep 2014 19:26:52 +0200
+
+hugin (2014.0.0~rc3+dfsg-4) unstable; urgency=medium
+
+  * Use dh, enable parallel build. Closes: #759121
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 31 Aug 2014 12:00:25 +0200
+
+hugin (2014.0.0~rc3+dfsg-3) unstable; urgency=medium
+
+  * Update hugin-data's 'Suggests: python-wxgtk2.8' to
+    'Suggests: python-wxgtk3.0' (Thanks, Olly Betts). Closes: #759087
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 24 Aug 2014 07:47:28 +0200
+
+hugin (2014.0.0~rc3+dfsg-2) unstable; urgency=medium
+
+  * Add autopkgtest, generating a simple panorama.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 03 Aug 2014 13:35:48 +0200
+
+hugin (2014.0.0~rc3+dfsg-1) unstable; urgency=medium
+
+  * New upstream version.
+    + Drop 50_wxTreeListCtrl.diff
+  * Pull 50_10aa8ea89d9e_crash_when_loading_multiple_images.diff and 
+    51_b2c6b668f052_Fixed_typo_in_last_commit.diff from upstream hg, 
+    fixing for a crash on loading multiple pictures in step 1 of
+    the assistant. Closes: #747021
+  * Switch build-dependency back to a versioned dependency on boost
+    metapackages (boost-defaults).
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 25 May 2014 14:02:24 +0200
+
+hugin (2014.0.0~rc2+dfsg-2) unstable; urgency=medium
+
+  * Build against wxwidgets3.0. Closes: #746528
+  * 50_wxTreeListCtrl.diff: Pull two patches from upstream hg to fix a crash
+    with wxwidgets3.0 while still allowing a build against wxwidgets2.8
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 17 May 2014 14:07:59 +0200
+
+hugin (2014.0.0~rc2+dfsg-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 27 Apr 2014 15:09:01 +0200
+
+hugin (2014.0.0~rc1+dfsg-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * Temporarily switch over to boost1.55 since the default version (1.54) is
+    broken in sid. #739904
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 01 Mar 2014 09:16:20 +0100
+
+hugin (2014.0.0~rc1+dfsg-1) experimental; urgency=medium
+
+  * New upstream version.
+  * Build-Depend on libimage-exiftool-perl.
+
+ -- Andreas Metzler <ametzler@debian.org>  Thu, 20 Feb 2014 18:44:18 +0100
+
+hugin (2014.0.0~beta1+dfsg-1) experimental; urgency=low
+
+  * New upstream version.
+    + Does not include wrapper script autopano-noop anymore, drop
+      patches/45_autopano-noop.sh_withoutshextension.
+    + Drop 50_fixwhatis.diff, included upstream.
+    + Bump build-dep on libpano13-dev to >= 2.9.19~beta1.
+    + Bump build-dep on boost to >= 1.44.
+    + matchpoint, nona_gui and PTBatcher have been dropped.
+    + pto_mask, pto_move and pto_template added.
+    + Does not fails to stitch in mktemp -d directory anymore.
+      Closes: #723153
+  * Build-Depend on unversioned libtiff-dev.
+
+ -- Andreas Metzler <ametzler@debian.org>  Wed, 01 Jan 2014 18:04:55 +0100
+
+hugin (2013.0.0+dfsg-1) unstable; urgency=low
+
+  * New upstream stable release, source code identiical to rc2. (We still
+    provide an updated tarball to get a correct reference to the hg rev in
+    rev.txt.)
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 27 Oct 2013 17:26:34 +0100
+
+hugin (2013.0.0~rc2+dfsg-3) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 13 Oct 2013 08:43:54 +0200
+
+hugin (2013.0.0~rc2+dfsg-2) experimental; urgency=low
+
+  * Upload to experimental.
+  * Switch back to default boost version.
+
+ -- Andreas Metzler <ametzler@debian.org>  Mon, 16 Sep 2013 19:45:37 +0200
+
+hugin (2013.0.0~rc2+dfsg-1) unstable; urgency=low
+
+  * New upstream version.
+  * 50_fixwhatis.diff - correct whatis entry of two manpages.
+
+ -- Andreas Metzler <ametzler@debian.org>  Fri, 13 Sep 2013 19:11:19 +0200
+
+hugin (2013.0.0~rc1+dfsg-1) unstable; urgency=low
+
+  * New upstream version.
+  * Drop 50_9928ad3bd989_python_multiarch.diff, included upstream.
+  * Ship newly available geocpset.1.
+  * Fix vcs-field-not-canonical lintian error by using anonscm instead of
+    git.debian.org.
+
+ -- Andreas Metzler <ametzler@debian.org>  Thu, 27 Jun 2013 19:08:59 +0200
+
+hugin (2013.0.0~beta1+dfsg-3) unstable; urgency=low
+
+  * Upload to unstable.
+  * [50_9928ad3bd989_python_multiarch.diff] Fix FTBFS with multi-arch python
+    due to Python include file assumptions.
+  * Build-depend on libglew-dev instead of libglew1.5-dev. - Starting with
+    wheezy the latter is a virtual package provided by the former.
+  * Delete some unused code in debian/rules.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 26 May 2013 13:57:40 +0200
+
+hugin (2013.0.0~beta1+dfsg-2) experimental; urgency=low
+
+  * Temporarily hard-code a build-depency on boost 1.53, since boost 1.49
+    is broken by libc 2.17. Closes: #707541. Hugin itself requires
+    boost >= 1.41. (Thanks, Stefan Peter)
+    http://mid.gmane.org/5140F46C.4010204%40stepet.ch
+
+ -- Andreas Metzler <ametzler@debian.org>  Fri, 10 May 2013 08:19:36 +0200
+
+hugin (2013.0.0~beta1+dfsg-1) experimental; urgency=low
+
+  * Add a 'Built-Using:' entry for libzthread-dev to hugin-tools.
+  * Drop b-d on tclap.
+  * Ship newly available commandline utils (geocpset, pto_lensstack, pto_var).
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 09 Mar 2013 09:08:17 +0100
+
+hugin (2012.0.0+dfsg-1) experimental; urgency=low
+
+  * Append CPPFLAGS to C(XX)FLAGS for hardening support.
+  * New upstream release, identical to rc3.
+
+ -- Andreas Metzler <ametzler@debian.org>  Tue, 06 Nov 2012 19:56:27 +0100
+
+hugin (2012.0.0~rc3+dfsg-1) experimental; urgency=low
+
+  * New upstream version.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 14 Oct 2012 15:55:16 +0200
+
+hugin (2012.0.0~rc2+dfsg-1) experimental; urgency=low
+
+  * New upstream version.
+
+ -- Andreas Metzler <ametzler@debian.org>  Wed, 26 Sep 2012 19:47:14 +0200
+
+hugin (2012.0.0~rc1+dfsg-1) experimental; urgency=low
+
+  * New upstream version.
+  * Drop superfluous patches. (30_dutch_translation.diff
+    31_danish_translation.diff 32_update_python_api_versions.diff
+    33_unified_api-max.diff 34_assistant_downscale.diff
+    35_copyrightyear_and_lensfunref.diff)
+
+ -- Andreas Metzler <ametzler@debian.org>  Fri, 31 Aug 2012 19:40:03 +0200
+
+hugin (2012.0.0~beta1+dfsg-2) experimental; urgency=low
+
+  * Update to head of upstream HG 2012.0 branch (30_dutch_translation.diff
+    31_danish_translation.diff 32_update_python_api_versions.diff
+    33_unified_api-max.diff 34_assistant_downscale.diff
+    35_copyrightyear_and_lensfunref.diff). Included python plugins should work
+    again. Thanks, Stefan Peter.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 28 Jul 2012 12:43:24 +0200
+
+hugin (2012.0.0~beta1+dfsg-1) experimental; urgency=low
+
+  * New upstream version.
+
+ -- Andreas Metzler <ametzler@debian.org>  Wed, 25 Jul 2012 18:13:30 +0200
+
+hugin (2011.5.0.20120720+dfsg-1) experimental; urgency=low
+
+  * Package HG 'default' branch, which is supposed to be released as 2012.0.0.
+  * Drop patches pulled from upstream. (55_pyplugin.diff
+    56_shooting_pattern.diffm 57_woavers.diff). 50_fix_ftbfs_with_gcc_4.7 is
+    superseded by c7ecd541dbd7.
+  * Add liblensfun-dev build-dependency.
+  * Ship newly available pto_gen in hugin-tools.
+  * Use external libflann, add build-dependency.
+
+ -- Andreas Metzler <ametzler@debian.org>  Fri, 20 Jul 2012 11:40:22 +0200
+
+hugin (2011.4.0+dfsg-5) unstable; urgency=low
+
+  * Set PythonLibs_FIND_VERSION to make sure the library corresponding to
+    pyversions -d is found. (Otherwise we will get a FTBFS if e.g.
+    python3.2-dev is *also* installed.)
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 17 Jun 2012 13:26:26 +0200
+
+hugin (2011.4.0+dfsg-4) unstable; urgency=low
+
+  * [55_pyplugin.diff 56_shooting_pattern.diff 57_woavers.diff] Update
+    api-max in shipped python plugins. LP: #1001982
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 16 Jun 2012 17:47:10 +0200
+
+hugin (2011.4.0+dfsg-3) unstable; urgency=low
+
+  * Upload to unstable. (Swig related ftbfs on s390 has been fixed.)
+  * Drop suggests of hugin-data on python-argparse, its included in
+    python2.7. Closes: #653651
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 26 May 2012 13:28:13 +0200
+
+hugin (2011.4.0+dfsg-2) experimental; urgency=low
+
+  [ Andreas Metzler ]
+  * Remove doc/autopano-noop.pod on clean to allow building twice in a row.
+  * Drop Suggests: autopano-sift-c | autopano-sift.
+
+  [ Cyril Brulebois ]
+  * 50_fix_ftbfs_with_gcc_4.7 Fix gcc-4.7 build error. Closes: #671998
+
+ -- Andreas Metzler <ametzler@debian.org>  Tue, 08 May 2012 20:25:42 +0200
+
+hugin (2011.4.0+dfsg-1) unstable; urgency=low
+
+  * New upstream release, identical to rc1.
+    + Fixes calibrate_lens_gui segfault. Closes: #892827
+  * Upload to unstable.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 17 Dec 2011 15:51:36 +0100
+
+hugin (2011.4.0+dfsg~rc1-1) experimental; urgency=low
+
+  * New upstream release candidate.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 03 Dec 2011 13:34:07 +0100
+
+hugin (2011.4.0+dfsg~beta1-2) experimental; urgency=low
+
+  * New upstream snapshot.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 12 Nov 2011 18:03:30 +0100
+
+hugin (2011.2.0+dfsg-2) unstable; urgency=low
+
+  * Upload to unstable.
+  * Make use of /usr/share/dpkg/buildflags.mk, if available.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 09 Oct 2011 12:48:50 +0200
+
+hugin (2011.2.0+dfsg-1) experimental; urgency=low
+
+  * New upstream stable release (Identical to 2011.2.0+dfsg~rc5)
+  * Rebuilt against python2.7. Closes: #643747
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 01 Oct 2011 08:37:43 +0200
+
+hugin (2011.2.0+dfsg~rc5-1) experimental; urgency=low
+
+  * New upstream version.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 18 Sep 2011 12:14:38 +0200
+
+hugin (2011.2.0+dfsg~rc3-1) experimental; urgency=low
+
+  * New upstream version.
+  * [lintian] Drop Section entries in binary package stanzas
+    of debian/control.
+
+ -- Andreas Metzler <ametzler@debian.org>  Mon, 15 Aug 2011 08:26:18 +0200
+
+hugin (2011.2.0+dfsg~rc2-1) experimental; urgency=low
+
+  * New upstream version.
+  * Build with python support.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 23 Jul 2011 13:01:04 +0200
+
+hugin (2011.2.0+dfsg~rc1-1) experimental; urgency=low
+
+  * Build-Depend on libjpeg-dev instead of libjpeg62-dev. Closes: #634031
+  * New upstream version.
+    + Version boost build-dependencies.
+
+ -- Andreas Metzler <ametzler@debian.org>  Mon, 18 Jul 2011 19:24:44 +0200
+
+hugin (2011.2.0+dfsg~beta1-1) experimental; urgency=low
+
+  * New upstream beta release.
+  * B-d on libtclap-dev and libzthread-dev.
+  * calibrate_lens is superseded by calibrate_lens_gui.
+  * Ship newly available manpages for autopano-noop and PTBatcher.
+  * Use matchpoint.1 included upstream instead of Debian specific one.
+
+ -- Andreas Metzler <ametzler@debian.org>  Thu, 23 Jun 2011 19:20:07 +0200
+
+hugin (2011.0.0+dfsg-2) unstable; urgency=low
+
+  * Build-Depend on libjpeg-dev instead of libjpeg62-dev. Closes: #634031
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 16 Jul 2011 14:32:10 +0200
+
+hugin (2011.0.0+dfsg-1) unstable; urgency=low
+
+  * New upstream version. (No code changes relative to rc1.)
+
+ -- Andreas Metzler <ametzler@debian.org>  Wed, 01 Jun 2011 19:41:28 +0200
+
+hugin (2011.0.0+dfsg~rc1-1) experimental; urgency=low
+
+  * New upstream version.
+  * Drop Provides: hugin-bin, this was only relevant for etch -> lenny
+    upgrades.
+  * Use Breaks instead of Conflicts.
+
+ -- Andreas Metzler <ametzler@debian.org>  Mon, 16 May 2011 19:25:04 +0200
+
+hugin (2011.0.0+dfsg~beta3-1) experimental; urgency=low
+
+  * New upstream version.
+
+ -- Andreas Metzler <ametzler@debian.org>  Mon, 14 Mar 2011 15:56:19 +0100
+
+hugin (2011.0.0+dfsg~beta2-1) experimental; urgency=low
+
+  * New upstream version.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 05 Mar 2011 11:23:30 +0100
+
+hugin (2010.4.0+dfsg-3) unstable; urgency=low
+
+  * [debian/patches/46_ftbfsgcc46.diff] pulled from upstream HG. Fix build
+    failure with gcc 4.6.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 30 Apr 2011 13:44:05 +0200
+
+hugin (2010.4.0+dfsg-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 13 Feb 2011 15:13:25 +0100
+
+hugin (2010.4.0+dfsg-1) experimental; urgency=low
+
+  * Drop Cyril Brulebois from Uploaders. Thank you very much for your work.
+  * Bump package version. (rc3 was re-released as 2010.4.0).
+
+ -- Andreas Metzler <ametzler@debian.org>  Thu, 06 Jan 2011 14:28:24 +0100
+
+hugin (2010.4.0+dfsg~rc3-1) experimental; urgency=low
+
+  * New upstream version.
+  * Use debhelper v7.
+
+ -- Andreas Metzler <ametzler@debian.org>  Tue, 28 Dec 2010 19:03:44 +0100
+
+hugin (2010.4.0+dfsg~rc1-1) experimental; urgency=low
+
+  * New upstream version.
+
+ -- Andreas Metzler <ametzler@debian.org>  Fri, 24 Dec 2010 09:36:37 +0100
+
+hugin (2010.4.0+dfsg~beta2-1) experimental; urgency=low
+
+  * New upstream version.
+  * Drop patches included upstream: 51_initializecp-prefs.diff, 
+    52_build_on_kFreeBSD
+  * Unfuzz 45_autopano-noop.sh_withoutshextension.
+  * [debian/copyright] Refresh list of upstream authors from authors.txt.
+  * Invoke dh_makeshlibs with --noscripts option to get rid of lintian
+    warnings post(inst|rm)-has-useless-call-to-ldconfig. (The program is still
+    necessary to make dh_shlibdeps aware of the private libraries without
+    fiddling).
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 04 Dec 2010 14:26:09 +0100
+
+hugin (2010.4.0+dfsg~beta1-2) experimental; urgency=low
+
+  * [52_build_on_kFreeBSD] Should fix building on GNU/kFreeBSD.
+  * Amend package descriptions, adding missing tools and sorting the list.
+    (Thanks, Yuval Levy)
+
+ -- Andreas Metzler <ametzler@debian.org>  Wed, 01 Dec 2010 19:13:39 +0100
+
+hugin (2010.4.0+dfsg~beta1-1) experimental; urgency=low
+
+  * New upstream version.
+  * Update build-depends, adding multiple newly required boost modules.
+  * Drop 20_invalidexiforientation.patch, included upstream.
+  * Refresh patches.
+  * Install newly available binaries and manpages (checkpto, cpfind and
+    icpfind).
+  * Drop unused lintian overrides, private shared libraries are not installed
+    in /usr/lib anymore.
+  * [51_initializecp-prefs.diff] Pulled from upstream HG. Correctly initialize
+    list of cp-detectors on fresh installs. See
+    https://bugs.launchpad.net/hugin/+bug/682099
+  * Minor updates for debian/rules.
+  * debian/control: Fix nona description. Its main purpose is remapping, not
+    stitching.
+  * Add menu entry for PTBatcherGUI.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 28 Nov 2010 08:58:10 +0100
+
+hugin (2010.2.0+dfsg~rc2-2) experimental; urgency=low
+
+  * [20_invalidexiforientation.patch, pulled from upstream HG] Fix crash on
+    loading images with invalid (empty but existing) Exif orientation tag.
+  * Reorder suggests to prefer autopano-sift-c over autopano-sift. Install
+    time defaults are set up for autopano-sift-c. Closes: #405862
+  * Remove Florent Bayle from Uploaders. Thank you for your work.
+    Closes: #554062
+  * Improve on short package descriptions. Closes: #603768
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 27 Nov 2010 11:18:21 +0100
+
+hugin (2010.2.0+dfsg~rc2-1) experimental; urgency=low
+
+  * New upstream version.
+  * Bump build-dep on libpano13 to require 2.9.17 release.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 02 Oct 2010 13:57:01 +0200
+
+hugin (2010.2.0+dfsg~rc1-1) experimental; urgency=low
+
+  * New upstream version.
+  * Standards-Version 3.9.1. No changes required.
+  * Wrap Build-Depends line in debian/control
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 18 Sep 2010 12:16:40 +0200
+
+hugin (2010.2.0+dfsg~beta2-1) experimental; urgency=low
+
+  * New upstream version.
+
+ -- Andreas Metzler <ametzler@debian.org>  Wed, 01 Sep 2010 18:59:01 +0200
+
+hugin (2010.2.0+dfsg~beta1-1) experimental; urgency=low
+
+  * New upstream version.
+    + Drop debian/patches/20_readonly_fs.diff, included upstream.
+    + Update patches.
+    + Bump build-dep on libpano13-dev to (>= 2.9.17~beta2-0).
+  * Ship newly available binaries (pano_modify pano_trafo pto_merge).
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 18 Jul 2010 18:15:48 +0200
+
+hugin (2010.0.0+dfsg-3) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 09 May 2010 14:37:18 +0200
+
+hugin (2010.0.0+dfsg-2) experimental; urgency=low
+
+  * Pulled from upstream svn trunk 20_readonly_fs.diff: Warn on failure to
+    save project file. Closes: #576435
+
+ -- Andreas Metzler <ametzler@debian.org>  Fri, 09 Apr 2010 19:25:56 +0200
+
+hugin (2010.0.0+dfsg-1) experimental; urgency=low
+
+  * New upstream version.
+    + update debian/copyright.
+  * Install deghosting_mask binary and manpage.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 27 Mar 2010 14:11:09 +0100
+
+hugin (2009.4.0+dfsg-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 21 Mar 2010 13:01:38 +0100
+
+hugin (2009.4.0+dfsg-1) experimental; urgency=low
+
+  * New upstream version.
+  * Use dpkg-source v3 format instead of quilt.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 19 Dec 2009 08:42:09 +0100
+
+hugin (2009.4.0+dfsg~rc3-1) experimental; urgency=low
+
+  * New upstream version.
+  * Drop libboost-python-dev build-dependency since #548503 fixed.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 05 Dec 2009 13:18:34 +0100
+
+hugin (2009.4.0+dfsg~rc2-1) experimental; urgency=low
+
+  * New upstream version.
+  * update debian/copyright.
+  * Ship newly available binaries calibrate_lens and cpclean.
+  * [43_fallbackhelp.patch] Invoke sensible-browser instead of using
+    wxLaunchDefaultBrowser(), since the latter does not work without KDE or
+    GNOME.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 24 Oct 2009 10:58:38 +0200
+
+hugin (2009.2.0+dfsg-2) unstable; urgency=low
+
+  * Stop specialcasing Linux in 42_stoplinklibXI_libXmu. None of Debian's
+    architectures should require linkage against indirect dependencies. This
+    hopefully makes hugin build on kFreeBSD (and hurd).
+
+ -- Andreas Metzler <ametzler@debian.org>  Thu, 08 Oct 2009 19:20:51 +0200
+
+hugin (2009.2.0+dfsg-1) unstable; urgency=low
+
+  * New upstream release, identical to rc1. Closes: #549119
+  * Upload to unstable.
+
+ -- Andreas Metzler <ametzler@debian.org>  Tue, 06 Oct 2009 19:07:27 +0200
+
+hugin (2009.2.0+dfsg~rc1-1) experimental; urgency=low
+
+  * New upstream release candidate.
+  * Boost-defaults has switched to version 1.40:
+    + boost/thread/thread.hpp does not #include <boost/function.hpp> anymore.
+      Patch hugin [debian/patches/55_boost1.40.diff] to directly include the
+      header.
+    + libboost-graph1.40-dev's boost/graph/breadth_first_search.hpp indirectly
+      #includes (and therefore requires)
+      boost/python/detail/referent_storage.hpp which is part of
+      libboost-python1.40-dev. However the former package does not depend on
+      the package. Temporarily add a build-dependency until #548503 is
+      resolved.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 27 Sep 2009 12:13:27 +0200
+
+hugin (0.8.0.dfsg+2009.2.0~beta4-1) experimental; urgency=low
+
+  * New upsteam version 2009.2.0 beta4.
+    + Tarball does not contain src/matchpoint/evaluation anymore, update
+      get-orig-source target and debian/copyright.
+    + Drop debian/patches/40_fix_implicit_linking - applied upstream.
+  * 45_autopano-noop.sh_withoutshextension: Install autopano-noop.sh as
+    autopano-noop.
+  * Ship autopano-noop wrapper script (in hugin package, since it is invoked
+    from the GUI frontend.)
+
+ -- Andreas Metzler <ametzler@debian.org>  Mon, 14 Sep 2009 11:22:52 +0200
+
+hugin (0.8.0.dfsg+2009.2.0~beta3+svn4385-1) experimental; urgency=low
+
+  * svn prerelease 4385.
+    + Does not crash when loading CR2 raw files anymore. Closes: #416222
+  * Old debian/patches/40_fix_implicit_linking applied upstream, but the code
+    is re-broken due to added dependencies. Update patch.
+  * Add freeglut3-dev to build-depends.
+  * Build with VERBOSE=1.
+  * New patch 42_stoplinklibXI_libXmu to stop FindGLUT.cmake from causing
+    direct linking against both libXi and libXmu.
+  * Update debian/copyright.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 12 Sep 2009 09:55:56 +0200
+
+hugin (0.8.0.dfsg-2) unstable; urgency=low
+
+  * Upload to unstable.
+  * Use dversionmangle in watchfile.
+
+ -- Andreas Metzler <ametzler@debian.org>  Wed, 09 Sep 2009 20:11:43 +0200
+
+hugin (0.8.0.dfsg-1) experimental; urgency=low
+
+  [ Andreas Metzler ]
+  * New upstream version. Closes: #537542
+    + Uses correct default value for enfuse/enblend if the option is not
+      already saved. Closes: #504296
+  * [lintian] Stop invoking dh_desktop.
+  * Standards-Version 3.8.2, no changes required.
+  * Add minimal manpage for matchpoint.
+  * Add get-orig-source target to debian/rules
+  * Add minimal README.source.
+
+  [ Cyril Brulebois ]
+  * debian/watch: Follow upstream's move from bz2 to gz for the tarballs,
+    thanks to Fabrice Coutadeur (Closes: #539243). Finally support both
+    extensions, just to make sure.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 06 Sep 2009 11:33:55 +0200
+
+hugin (0.8.0~rc4-1) experimental; urgency=low
+
+  * New upstream version.
+    + Drop patches/60_fixpreviewcrash.diff.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 20 Jun 2009 10:13:45 +0200
+
+hugin (0.8.0~rc3-2) experimental; urgency=low
+
+  * [patches/60_fixpreviewcrash.diff] Pulled from upstream, fix a crash in
+    fast preview window.
+    https://sourceforge.net/tracker/?func=detail&aid=2801663&group_id=77506&atid=550441
+
+ -- Andreas Metzler <ametzler@debian.org>  Fri, 12 Jun 2009 19:26:42 +0200
+
+hugin (0.8.0~rc3-1) experimental; urgency=low
+
+  * New upstream version.
+    + jhead removed, update patches/40_fix_implicit_linking.
+    + Add Build-Conflicts: wx2.6-headers. If both wx2.6 and wx2.8 are
+      installed the cmake tests will find the lower (non-supported) version and
+      building of wx-using stuff is disabled.
+    + Builds with gcc 4.4.  Closes: #526183
+    + Does not end up with "false" instead of "enblend" in Makefiles when
+      options browsed but not saved. Closes: #504296
+    + Install newly added manpages.
+    + Standards-Version 3.8.1. No changes required.
+   * Drop debian/README.Debian, post-lenny uploads depend on enfuse and
+     enblend.
+   * Describe how Debian's orig.tgz differs from the upstream tarball in
+     debian/copyright.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 07 Jun 2009 10:05:48 +0200
+
+hugin (0.8.0~beta4-1) experimental; urgency=low
+  
+  * Fix dependencies in debian/rules to correctly build with
+    dpkg-buildpackage -j3.
+  * New upstream version.
+    + Drop unneeded patches 20_remove_encoding_key_from_desktop_files,
+      30_manpage_hyphen_fixes: Fix hyphens in doc/fulla.1.
+    + Update 40_fix_implicit_linking.
+    + Now requires wxWidgets 2.8, GLEW and OpenGL. New projections require
+      libpano13 2.9.14. Update build-depends.
+    + New binaries matchpoint, celeste_standalone, pto2mk,
+      PTBatcherGUI and PTBatcher.
+    + Upstream's build system now correctly installs manpages, making it
+      possible to use dh_install instead of dh_installman to put them in
+      Debian packages. This makes "dh_install --list-missing
+      --sourcedir=debian/tmp" very useful.
+
+ -- Andreas Metzler <ametzler@debian.org>  Wed, 06 May 2009 19:20:41 +0200
+
+hugin (0.7.0-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 19 Apr 2009 18:21:47 +0200
+
+hugin (0.7.0-1) experimental; urgency=low
+
+  * New upstream release (Closes: #502721).
+  * Depend on both enblend (>= 3.2) and enfuse, now that they are
+    available (Closes: #495874).
+  * Drop the following patch accordingly:
+     - 50_disable_enblend_compression
+  * debian/rules:
+     - Specify “ChangeLog” in the dh_installchangelogs call since that's a
+       proper release and no longer an SVN snapshot.
+     - Get rid of the autooptimi{s,z}er renaming hack, fixed upstream.
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 28 Nov 2008 03:34:21 +0100
+
+hugin (0.7.0~svn3191+beta5-2) unstable; urgency=low
+
+  * Update README.Debian to reflect the current status of hugin with
+    respect to enblend/enfuse. Also point to the following page, which
+    will contain uptodate information about the backports for the lenny
+    lifetime:
+      http://pkg-phototools.alioth.debian.org/lenny.html
+  * Add forgotten “tca_correct” binary to debian/hugin-tools.install,
+    thanks to Chris Chiappa (Closes: #502104). Another one is
+    “matchpoint”, but since it wasn't requested yet, don't touch it at the
+    moment.
+
+ -- Cyril Brulebois <kibi@debian.org>  Tue, 04 Nov 2008 15:00:59 +0100
+
+hugin (0.7.0~svn3191+beta5-1) unstable; urgency=low
+
+  * New upstream release candidate: 0.7.0_beta5. The exact revision wasn't
+    specified but that's mostly the same as svn r3191.
+  * Adjust dependencies, thanks to several reporters, and especially to
+    Andreas Metzler for the checks on enblend and the pointers:
+     - Add make to hugin's Depends (Closes: #492469).
+     - Move enblend from hugin-tools's Recommends to hugin's Depends, as
+       it is now a requirement (Closes: #394647, #491539).
+     - Also add libimage-exiftool-perl since upstream specifies that the
+       the exiftool binary (from the Image::ExifTool Perl module) is
+       needed.
+     - Version the Build-Depends on libexiv2-dev: “>= 0.12”. With former
+       versions, an FTBFS is triggered due to undefined references to
+       Jpeg-related functions (Closes: #491335).
+  * Add autopano-sift-c as alternative to autopano-sift to the suggested
+    packages. As a reminder, patent issues prevent the inclusion of those
+    packages in Debian.
+  * Fix manpage mismatch: /usr/bin/autooptimizer versus autooptimizer(1),
+    (spotted by Julien Valroff, thanks):
+     - debian/rules: Copy generated doc/autooptimizer.1 into
+       doc/autooptimiser.1, and remember it for cleanup.
+     - debian/hugin-tools.manpages: Replace the z version with the s one.
+  * Disable enblend compression, since Debian has enblend 3.0 for now and
+    this option would require enblend 3.1 or a CVS snapshot. That means
+    that the compression setting is going to be silently ignored for now,
+    thanks to a quick patch by Steve Cotton (Closes: #491227, #491562):
+     - 50_disable_enblend_compression: Do not call enblend with
+       a “--compression” argument.
+  * Add a README.Debian file to document that some features (like the
+    above-mentioned one) might not be available because enblend 3.1 isn't
+    released yet, and suggesting the use of backports.org if enblend 3.1
+    can't make it in time for lenny.
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 27 Jul 2008 05:40:02 +0200
+
+hugin (0.7.0~svn3191-1) unstable; urgency=low
+
+  * New snapshot, from upstream svn r3191 (Closes: #405389, #469449):
+     - Also fix FTBFS (Closes: #474787).
+  * Move the maintainer to the pkg-phototools team, add Florent Bayle and
+    myself to Uploaders.
+  * Ack NMUs, thanks Nico, Clint, Luk, and Joerg.
+  * Move the Homepage from the long description to a source field.
+  * Move patch management to quilt:
+     - Add a B-D on it.
+     - Add an include of quilt.make, adapt config.status and clean targets.
+  * Dropped patch:
+     - 10_fix_insecure_tmp_file_handling: Fix insecure file handling, patch
+       by Nico Golde (see 0.6.1-1.1). Merged upstream.
+  * Current patches:
+     - 20_remove_encoding_key_from_desktop_files: Remove unneeded
+       “Encoding” key from the desktop files, per lintian.
+     - 30_manpage_hyphen_fixes: Fix hyphens in doc/fulla.1.
+  * Nuke trailing spaces in all files under debian/.
+  * Bump Standards-Version to 3.8.0 (no change needed).
+  * Add Vcs-Git and Vcs-Browser, which have to be updated once the team's
+    repository is created.
+  * Add src/tests/Makefile to the dh_clean call since it is not cleaned.
+  * Move “usr/share/applications/*” from debian/hugin-data.install to
+    debian/hugin-bin.install so that the desktop file is kept with the
+    command it references.
+  * Add a “Replaces: hugin-data (<< 0.7.0)” to hugin-bin accordingly.
+  * Move from libpano12 to libpano13:
+     - Replace the Build-Depends on libpano12-dev with one on
+       libpano13-dev (though the build against libpano12 is still
+       possible).
+     - Replace hugin's Depends on libpano12-bin with one on libpano13-bin
+       (which is needed since libpano13.so gets dlopen'd).
+  * Adjust debian/rules to only use a configure target as well as a
+    configure-stamp file, so that ./configure is no longer run between
+    “make” and “make install”.
+  * Add debian/watch. Note that underscores and dashes are mangled as
+    tildes.
+  * Add “-Wl,--as-needed” and its companion “-Wl,-z,defs” to LDFLAGS to
+    avoid extra linking. To fix the (broken) build when these options are
+    in use, add a patch to take care of intermediate linking steps:
+     - 40_fix_implicit_linking.
+  * Delete debian/*.dirs since they are not needed.
+  * New build system:
+     - Replace ./configure with a cmake call.
+     - Add cmake to Build-Depends and drop autotools-dev accordingly.
+     - Drop config.{guess,sub}-related instructions from debian/rules.
+     - Build in “$(BUILD_DIR)” (set to build-dir), and don't rely on
+       “make (dist)clean” to do the job, cmake doesn't support it… Remove
+       the build directory in the clean target, as well as configure-stamp.
+  * Get rid of unneeded files right after “make install”:
+     - Extra license file.
+     - “*.so” symlinks to “*.so.0.0” files.
+  * Add lintian overrides for the following warnings about private
+    libraries, which will be moved by upstream under a private directory
+    (which makes these warnings quite irrelevant):
+     - several-sonames-in-same-package;
+     - package-name-doesnt-match-sonames.
+  * Add libopenexr-dev and libexiv2-dev to Build-Depends.
+  * Drop zip from Build-Depends, no longer needed.
+  * (Re)order Build-Depends:
+     - Build system related tools.
+     - Image libraries.
+     - GUI libraries.
+  * Add a “maint-svn-snapshot” target to ease svn snapshot creation. An
+    UVERSION parameter can be passed to force using a given revision
+    instead of determining it from the changelog.
+  * Generate the manpages from perlpod format in the “build” target,
+    taking care to remember which ones were generated during the build
+    (as opposed to the ones shipped by upstream, along with their .pod
+    counterpart).
+  * debian/hugin-tools.install: Add all files from /usr/bin but hugin.
+  * Simplify debian/hugin-data.install: Only list usr/share.
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 13 Jul 2008 23:30:01 +0200
+
+hugin (0.6.1-1.4) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix FTBFS with GCC 4.3. (closes: #474787)
+
+ -- Joerg Friedrich <Joerg.Friedrich@friedrich-kn.de>  Sat, 12 Jul 2008 17:09:18 +0200
+
+hugin (0.6.1-1.3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix FTBFS with GCC 4.3 (Closes: #421112).
+
+ -- Luk Claes <luk@debian.org>  Sat, 15 Mar 2008 21:59:16 +0000
+
+hugin (0.6.1-1.2) unstable; urgency=low
+
+  * NMU.
+  * Only run $(MAKE) distclean if Makefile exists.
+  * Switch hugin-bin menu section to Applications.
+
+ -- Clint Adams <schizo@debian.org>  Thu, 15 Nov 2007 09:05:59 -0500
+
+hugin (0.6.1-1.1) unstable; urgency=high
+
+  * Non-maintainer upload by testing security team.
+  * Fix insecure temp file handling (CVE-2007-5200) (Closes: #447344).
+
+ -- Nico Golde <nion@debian.org>  Wed, 24 Oct 2007 18:31:00 +0200
+
+hugin (0.6.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #251618)
+
+ -- Florent Bayle <fbayle@bigfoot.com>  Thu, 27 Jul 2006 16:17:46 +0200
+

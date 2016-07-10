@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e
+
+WORKDIR=$(mktemp -d --suffix=.hugin)
+#trap "rm -rf $WORKDIR" 0 INT QUIT ABRT PIPE TERM
+
+cp debian/tests/data/* $WORKDIR
+cd $WORKDIR
+
+# rm -f  pano-tmp.pto pano.pto pano.mk *.tif pano.pto_generated.arg
+
+pto_gen -o pano.pto left.jpeg right.jpeg
+cpfind -o pano-tmp.pto pano.pto
+mv pano-tmp.pto pano.pto
+celeste_standalone -o pano-tmp.pto -i pano.pto
+mv pano-tmp.pto pano.pto
+cpclean -o pano-tmp.pto pano.pto
+mv pano-tmp.pto pano.pto
+autooptimiser -a -s -o pano-tmp.pto pano.pto
+mv pano-tmp.pto pano.pto
+pano_modify --crop=AUTO -o pano-tmp.pto pano.pto
+mv pano-tmp.pto pano.pto
+checkpto pano.pto
+pto2mk -o pano.mk -p generated pano.pto
+make -f pano.mk
+test -e generated.tif
+ls -l

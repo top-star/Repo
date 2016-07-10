@@ -1,0 +1,12 @@
+hugin (2010.4.0+dfsg~beta1-1) experimental; urgency=low
+
+  Starting with 2010.4.0 the hugin suite of program also includes a
+  (patent-free) control-point detector. autopano-sift(-c) et al are not
+  necessary/nice to have anymore. 
+
+  If hugin does not offer cpfind as control-point detector after
+  ugrading to 2010.4.0, please open the respective configuration dialogue
+  (File->Preferences->Control-Point-Detectors) and use the [Load Defaults]
+  button to update the list.
+
+ -- Andreas Metzler <ametzler@debian.org>  Sat, 27 Nov 2010 11:45:48 +0100

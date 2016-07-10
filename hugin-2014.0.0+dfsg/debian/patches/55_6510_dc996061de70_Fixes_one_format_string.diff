@@ -1,0 +1,21 @@
+# HG changeset patch
+# User tmodes
+# Date 1391242867 -3600
+#      Sat Feb 01 09:21:07 2014 +0100
+# Branch hugin_parallel_openmp
+# Node ID dc996061de709f8fcfdd435e4841c48a9852a737
+# Parent  56059be698f512a01f48e88102f894c2463ae207
+Fixes one format string
+
+diff -r 56059be698f5 -r dc996061de70 src/hugin1/hugin/CPImageCtrl.cpp
+--- a/src/hugin1/hugin/CPImageCtrl.cpp	Fri Jan 24 18:27:52 2014 +0100
++++ b/src/hugin1/hugin/CPImageCtrl.cpp	Sat Feb 01 09:21:07 2014 +0100
+@@ -1027,7 +1027,7 @@
+ {
+     DisplayedControlPoint dcp(cp, this, mirrored);
+     dcp.SetColour(pointColors[m_points.size() % pointColors.size()], textColours[m_points.size() % textColours.size()]);
+-    dcp.SetLabel(wxString::Format(wxT("%d"), m_points.size()));
++    dcp.SetLabel(wxString::Format(wxT("%lu"), (unsigned long int)m_points.size()));
+     m_points.push_back(dcp);
+ }
+ 

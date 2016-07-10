@@ -1,0 +1,86 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export DEB_LDFLAGS_MAINT_APPEND := -Wl,--as-needed -Wl,-z,defs
+export DEB_CFLAGS_MAINT_APPEND := -Wall
+export DEB_CXXFLAGS_MAINT_APPEND := -Wall
+# Default python version.
+PYTHONDEFVERSION := $(shell pyversions -d | sed -e 's/python\([0-9.]\+\)/\1/')
+
+# Upstream version can be overriden so as to fetch newer revisions
+# without having to modify the top-most changelog entry
+UVERSION  ?= $(shell dpkg-parsechangelog | perl -ne 'print "$$1\n" if (/^Version: (.*?)(?:\+dfsg)?\-.*?$$/)')
+
+# Where to store which manpages are generated (upstream keeps some manpages
+# both under .pod and .1 formats).
+GENERATED_MANPAGES := debian/generated-manpages
+
+zthread-dep := $(shell \
+	dpkg-query -f='$${source:Package} (= $${source:Version})' \
+	-W libzthread-dev )
+
+override_dh_auto_build:
+	dh_auto_build --verbose -O--parallel
+	# Build manpages.
+	for i in doc/*.pod ; do \
+		if [ ! -f $${i%%.pod}.1 ] ; then \
+			pod2man --center "HUGIN TOOLS" \
+				--release $(UVERSION) \
+				$$i -o $${i%%.pod}.1 ; \
+			echo $${i%%.pod}.1 >> $(GENERATED_MANPAGES) ; \
+		fi ; \
+	done
+
+override_dh_gencontrol:
+	dh_gencontrol -- -Vlibzthread-dev:Built-Using='$(zthread-dep)'
+
+override_dh_makeshlibs:
+	dh_makeshlibs --noscripts
+
+override_dh_auto_install:
+	dh_auto_install --verbose
+	rm -vf debian/tmp/usr/share/hugin/xrc/data/help_en_EN/LICENCE.manual
+
+override_dh_auto_clean:
+	dh_auto_clean --verbose
+	rm -vf src/celeste/Config.h
+	# Clean generated manpages.
+	if [ -f $(GENERATED_MANPAGES) ] ; then \
+		for i in `cat $(GENERATED_MANPAGES)` ; do \
+			rm -f $$i ; \
+		done ; \
+		rm -vf $(GENERATED_MANPAGES) ; \
+	fi
+
+override_dh_auto_configure:
+	dh_auto_configure --verbose --\
+		-DBUILD_HSI:BOOL=ON \
+		-DPythonLibs_FIND_VERSION=$(PYTHONDEFVERSION)
+
+override_dh_python2:
+	dh_python2 -i /usr/share/hugin/data/plugins
+	dh_python2 -a --no-guessing-versions
+
+%:
+	dh $@ --with python2 --parallel
+
+get-orig-source:
+	rm -rf  $(CURDIR)/debian/get-orig-source
+	mkdir $(CURDIR)/debian/get-orig-source
+	uscan --force-download --rename --download-version ${UVERSION} \
+		--destdir $(CURDIR)/debian/get-orig-source
+	cd $(CURDIR)/debian/get-orig-source && \
+		if test -e hugin_${UVERSION}.orig.tar.gz ; then \
+		tar xzf hugin_${UVERSION}.orig.tar.gz ; else \
+		tar xjf hugin_${UVERSION}.orig.tar.bz2 ; fi && \
+		cd hugin-* && \
+		rm -rvf platforms/windows/ mac/*  \
+		src/foreign/getopt/src/msvs/ platforms/mac/* \
+		platforms/CMakeLists.txt &&\
+		touch platforms/CMakeLists.txt && \
+		find -name '*.vcproj' -delete && \
+		cd .. && \
+		tar -cJf $(CURDIR)/../hugin_$(UVERSION)+dfsg.orig.tar.xz hugin-*
+	rm -rf  $(CURDIR)/debian/get-orig-source

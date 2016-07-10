@@ -1,0 +1,12 @@
+?package(hugin):\
+	needs="X11"\
+	section="Applications/Graphics"\
+	title="Hugin"\
+	longtitle="Hugin, make panoramas from multiple pictures"\
+	command="/usr/bin/hugin"
+?package(hugin):\
+	needs="X11"\
+	section="Applications/Graphics"\
+	title="PTBatcherGUI"\
+	longtitle="Manage Hugin batch queue"\
+	command="/usr/bin/PTBatcherGUI"

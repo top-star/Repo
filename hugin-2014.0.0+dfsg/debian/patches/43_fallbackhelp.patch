@@ -1,0 +1,30 @@
+Author: Andreas Metzler
+Description: Invoke sensible-browser instead of using 
+ wxLaunchDefaultBrowser(). The latter does not work on e.g. windowmaker.
+
+diff -NurBbp hugin-2010.4.0/src/hugin1/hugin/MainFrame.cpp b/src/hugin1/hugin/MainFrame.cpp
+--- hugin-2010.4.0/src/hugin1/hugin/MainFrame.cpp	2010-11-26 20:29:24.000000000 +0100
++++ b/src/hugin1/hugin/MainFrame.cpp	2010-11-27 12:03:02.000000000 +0100
+@@ -1103,7 +1103,10 @@ void MainFrame::OnAddTimeImages( wxComma
+ 
+ void MainFrame::OnShowDonate(wxCommandEvent & e)
+ {
+-    wxLaunchDefaultBrowser(wxT("http://sourceforge.net/project/project_donations.php?group_id=77506"));
++  wxString cmd = wxT("sensible-browser http://sourceforge.net/project/project_donations.php?group_id=77506");
++
++  wxExecute(cmd, wxEXEC_ASYNC);
++    /* wxLaunchDefaultBrowser(wxT("http://sourceforge.net/project/project_donations.php?group_id=77506")); */
+ }
+ 
+ 
+@@ -1239,7 +1242,9 @@ void MainFrame::DisplayHelp(wxString sec
+         return;
+     }
+     DEBUG_INFO("help file: " << strFile.mb_str(wxConvLocal));
+-    if(!wxLaunchDefaultBrowser(strFile))
++    /* if(!wxLaunchDefaultBrowser(strFile)) */
++    wxString cmd = wxT("sensible-browser ") + strFile;
++    if (!::wxExecute(cmd, wxEXEC_ASYNC))
+     {
+         wxLogError(_("Can't start system's web browser"));
+     }

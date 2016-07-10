@@ -1,0 +1,34 @@
+# HG changeset patch
+# User tmodes
+# Date 1414259156 -7200
+#      Sat Oct 25 19:45:56 2014 +0200
+# Branch hugin_executor
+# Node ID 59938e35626e2a5efb681597047414921bbc5e4d
+# Parent  f02768b61fb549d2626f47aefa0ca713d7374f49
+Fixes formating of 2 strings
+Should fixed assert errors [1385707]
+
+diff --git a/src/hugin1/base_wx/huginConfig.cpp b/src/hugin1/base_wx/huginConfig.cpp
+--- a/src/hugin1/base_wx/huginConfig.cpp
++++ b/src/hugin1/base_wx/huginConfig.cpp
+@@ -74,7 +74,7 @@
+ 
+     wxFileName lastImg(wxString(pano.getImage(pano.getNrOfImages()-1).getFilename().c_str(),HUGIN_CONV_FILENAME));
+     placeholder[wxT("%lastimage")]=lastImg.GetName();
+-    placeholder[wxT("%#images")]=wxString::Format(wxT("%d"), pano.getNrOfImages());
++    placeholder[wxT("%#images")]=wxString::Format(wxT("%lu"), (unsigned long)pano.getNrOfImages());
+     PanoramaOptions opts=pano.getOptions();
+     pano_projection_features proj;
+     if (panoProjectionFeaturesQuery(opts.getProjection(), &proj))
+diff --git a/src/hugin1/ptbatcher/ProjectListBox.cpp b/src/hugin1/ptbatcher/ProjectListBox.cpp
+--- a/src/hugin1/ptbatcher/ProjectListBox.cpp
++++ b/src/hugin1/ptbatcher/ProjectListBox.cpp
+@@ -286,7 +286,7 @@
+     switch(i)
+     {
+         case 0:
+-            return wxString::Format(_T("%d"),project->id);
++            return wxString::Format(_T("%ld"),project->id);
+         case 1:
+             return project->path;
+         case 2:

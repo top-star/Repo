@@ -1,0 +1,15 @@
+# Binaries
+usr/bin/calibrate_lens_gui
+usr/bin/hugin
+usr/bin/hugin_stitch_project
+usr/bin/PTBatcherGUI
+
+usr/share/man/man1/calibrate_lens_gui.1*
+usr/share/man/man1/hugin.1*
+usr/share/man/man1/hugin_stitch_project.1*
+usr/share/man/man1/PTBatcherGUI.1*
+
+# Desktop
+usr/share/applications
+usr/share/mime/packages/hugin.xml
+
